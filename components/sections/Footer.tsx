@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Button } from "../ui/button";
+import { FloatButton } from "antd";
+import { CustomerServiceOutlined, PhoneFilled, WhatsAppOutlined } from '@ant-design/icons';
 
 export default function Footer() {
   const socialLinks = [
@@ -17,7 +20,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white py-16" id="contact">
+    <footer className="bg-primary text-white py-16" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
@@ -59,20 +62,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {["About Us", "Services", "Pricing", "Contact", "Terms of Service", "Privacy Policy"].map((link, index) => (
-                <li key={index}>
-                  <motion.a
-                    href="#"
-                    whileHover={{ x: 5 }}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    {link}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
+            <h3 className="text-xl font-semibold mb-6">Get In Touch</h3>
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full p-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full p-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                className="w-full p-3 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+               <Button variant={'secondary'} className="w-full">Send Message</Button>
+            </form>
           </div>
         </div>
 
@@ -80,6 +88,20 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} TurfBook. All rights reserved.</p>
         </div>
       </div>
+      <FloatButton
+            className="text-primary hover:text-secondary hover:bg-secondary/30"
+      shape="circle"
+      type="default"
+      style={{ insetInlineEnd: 14 }}
+      icon={<PhoneFilled />}
+    />
+      <FloatButton
+      className="text-primary hover:text-secondary hover:bg-secondary/30"
+      shape="circle"
+      type="default"
+      style={{ insetInlineEnd: 60 }}
+      icon={<WhatsAppOutlined />}
+    />
     </footer>
   );
 }

@@ -45,7 +45,7 @@ export default function Header() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/#features" },
-    { name: "Book Now", path: "/book" },
+    // { name: "Book Now", path: "/book" },
     { name: "Testimonials", path: "/#testimonials" },
     { name: "Contact", path: "/#contact" },
   ];
@@ -65,9 +65,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <Soccerball className={`h-8 w-8 ${
+            {/* <Soccerball className={`h-8 w-8 ${
                 isScrolled || isSidebarOpen ? "text-white" : "text-secondary"
-              }`} />
+              }`} /> */}
             <span
               className={`text-xl font-bold ${
                 isScrolled || isSidebarOpen ? "text-white" : "text-secondary"

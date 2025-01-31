@@ -2,7 +2,7 @@
 
 import {  useRef } from "react";
 import { motion } from "framer-motion";
-import SliderSectionForTestimonials from "../sliderForTestimonials/main";
+import { MarqueeDemo } from "../TestimonialsMarquee/main";
 
 
 export default function Testimonials() {
@@ -27,7 +27,9 @@ export default function Testimonials() {
             Don't just take our word for it - hear from our satisfied customers.
           </p>
         </motion.div>
-        <SliderSectionForTestimonials/>
+        <MarqueeDemo/>
+
+        {/* <SliderSectionForTestimonials/> */}
       </div>
     </section>
   );

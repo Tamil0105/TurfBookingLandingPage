@@ -18,7 +18,14 @@ export default function AboutUs() {
       },
     },
   };
-
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -59,31 +66,23 @@ export default function AboutUs() {
           </motion.div>
 
           {/* Right Column: Content */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-900">
-              Our Mission
-            </h3>
-            <p className="text-gray-600">
-              At Turf Booking, our mission is to provide seamless and affordable access to high-quality sports turfs for players, teams, and event organizers. We believe in promoting an active lifestyle and fostering a sense of community through sports.
-            </p>
-
-            <h3 className="text-2xl font-bold text-gray-900">
-              Our Values
-            </h3>
-            <ul className="list-disc list-inside text-gray-600 space-y-2">
-              <li>Customer-Centric: We prioritize your needs and satisfaction.</li>
-              <li>Transparency: Clear pricing and no hidden fees.</li>
-              <li>Quality: Only the best turfs and facilities.</li>
-              <li>Accessibility: 24/7 booking and support.</li>
-            </ul>
-
-            <h3 className="text-2xl font-bold text-gray-900">
-              Our Team
-            </h3>
-            <p className="text-gray-600">
-              Our team is made up of passionate sports enthusiasts and tech experts who are dedicated to making turf booking simple, efficient, and enjoyable for everyone.
-            </p>
-          </motion.div>
+          <motion.div
+      variants={textVariants}
+      initial="hidden"
+      animate="visible"
+      className="space-y-6"
+    >
+      <p className="text-gray-600 text-lg text-center md:text-start md:text-xl">
+        At Turf Booking, we aim to provide seamless and affordable access to
+        high-quality sports turfs for players, teams, and event organizers. We
+        prioritize your needs and satisfaction through transparent pricing with
+        no hidden fees, offering only the best turfs and facilities. Our 24/7
+        booking and support ensure accessibility for all. Our passionate team
+        of sports enthusiasts and tech experts is dedicated to making turf
+        booking simple, efficient, and enjoyable for everyone while promoting
+        an active lifestyle and fostering a sense of community through sports.
+      </p>
+    </motion.div>
         </motion.div>
       </div>
     </section>

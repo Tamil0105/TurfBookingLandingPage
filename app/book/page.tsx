@@ -4,13 +4,12 @@ import { useState, useEffect } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import moment from "moment-timezone"; // Import moment-timezone
 import { motion } from "framer-motion";
-import {  Form, Input, Select, Button, Card, Steps } from "antd";
+import {  Form, Input, Select, Button, Card, Steps, DatePicker } from "antd";
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { siteConfig } from "@/lib/config";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import SliderSectionForTurfCard from "@/components/sliderForTurfCard/main";
-import { DatePicker } from "@/components/datePicker";
 
 const { Option } = Select;
 const { Step } = Steps;
@@ -41,6 +40,8 @@ export default function BookingPage() {
     date: '',
     paymentMethod: '',
   });
+
+  
 
   // Load form data from localStorage on component mount
   useEffect(() => {
@@ -187,7 +188,7 @@ export default function BookingPage() {
   const calculateAvailableDuration = (startTime: string) => {
     let maxDuration = 0;
     let currentTime = startTime;
-console.log(startTime,getNextHour(startTime))
+   console.log(startTime,getNextHour(startTime))
     while (availableSlots.includes(currentTime)) {
       maxDuration++;
       currentTime = getNextHour(currentTime);
@@ -294,12 +295,11 @@ console.log(startTime,getNextHour(startTime))
               validateStatus={errors.date ? 'error' : ''}
               help={errors.date}
             >
-              <DatePicker/>
-              {/* <DatePicker
+              <DatePicker
                 className="w-full"
                 value={formData.date}
                 onChange={handleDateChange}
-              /> */}
+              />
             </Form.Item>
 
             <Form.Item
